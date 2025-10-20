@@ -1,0 +1,20 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "comed-telegram-bot",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-09-22",
+	"compatibility_flags": ["global_fetch_strictly_public"],
+  
+	"triggers": { "crons": ["*/5 * * * *"] },
+  
+	"kv_namespaces": [
+	  { "binding": "STATE", "id": "cfcafb3cb0b84af2bfe6ae84f615bdd7" }
+	],
+  
+	"vars": {
+		"MIN_CENTS": "2.0",
+		"MAX_CENTS": "8.0"
+	},
+  
+	"observability": { "enabled": true }
+  }
