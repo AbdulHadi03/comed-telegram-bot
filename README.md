@@ -15,23 +15,4 @@ A serverless Telegram bot built using Cloudflare Workers that monitors ComEd hou
 	•	Record tracking: Optional record-breaker alerts for new daily highs/lows with a 1 ¢ buffer (≥ 60 min spacing).
 	•	No daily cap: Runs continuously using Cloudflare’s Cron triggers.
 
-  🧠 Architecture Overview
 
-+-------------------------+
-|   Cloudflare Worker     |
-|  (Wrangler Deployed)    |
-+-----------+-------------+
-            |
-            | fetch JSON every 5 min
-            v
-+--------------------------+
-|   ComEd Price API        |
-|  (hourly energy data)    |
-+-----------+--------------+
-            |
-            | evaluate thresholds
-            v
-+--------------------------+
-| Telegram Bot API         |
-| -> Manager Chat ID       |
-+--------------------------+
